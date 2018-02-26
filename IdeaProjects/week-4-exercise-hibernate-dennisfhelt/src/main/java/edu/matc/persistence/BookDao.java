@@ -42,7 +42,7 @@ public class BookDao {
 
         /**
          * update book
-         * @param book  Book to be inserted or updated
+         * @param books  Book to be inserted or updated
          */
         public void saveOrUpdate (Book books){
 
@@ -50,7 +50,7 @@ public class BookDao {
 
         /**
          * update Book
-         * @param book  Book to be inserted or updated
+         * @param books  Book to be inserted or updated
          */
         public int insert (Book books){
             return 0;
@@ -58,7 +58,7 @@ public class BookDao {
 
         /**
          * Delete a book
-         * @param book Book to be deleted
+         * @param books Book to be deleted
          */
         public void delete (Book books){
 
