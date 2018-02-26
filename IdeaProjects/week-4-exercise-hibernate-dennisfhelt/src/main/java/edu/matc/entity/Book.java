@@ -43,7 +43,7 @@ public class Book {
      * @param id        the id
      * @param dateOfBirth  the date of birth
      */
-    public User(String firstName, String lastName, String userName, int id, LocalDate dateOfBirth) {
+    public Book(String firstName, String lastName, String userName, int id, LocalDate dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
