@@ -26,85 +26,73 @@ public class Book {
     private String isbn;
 
     @Column(name="publication_year")
-    private String publicationYear;
-}
+    private int publicationYear;
 
 
-
+    /**
+     * Instantiates a new Book.
+     */
     public Book() {
     }
 
+
     /**
-     * Instantiates a new User.
+     * Instantiates a new Book.
      *
-     * @param firstName the first name
-     * @param lastName  the last name
-     * @param userName  the user name
-     * @param id        the id
-     * @param dateOfBirth  the date of birth
+     * @param title           the title
+     * @param author          the author
+     * @param id              the id
+     * @param isbn            the isbn
+     * @param publicationYear the publication year
      */
-    public Book(String title, String author, String userName, int id, LocalDate dateOfBirth) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName = userName;
+    public Book(String title, String author, int id, String isbn, int publicationYear) {
+        this.title = title;
+        this.author = author;
         this.id = id;
-        this.dateOfBirth = dateOfBirth;
+        this.isbn = isbn;
+        this.publicationYear = publicationYear;
     }
 
 
     /**
-     * Gets first name.
+     * Gets title.
      *
-     * @return the first name
+     * @return the title
      */
-    public String getFirstName() {
-        return firstName;
+    public String getTitle() {
+        return title;
     }
 
-    /**
-     * Sets first name.
-     *
-     * @param firstName the first name
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
     /**
-     * Gets last name.
+     * Sets title.
      *
-     * @return the last name
+     * @param title the title
      */
-    public String getLastName() {
-        return lastName;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    /**
-     * Sets last name.
-     *
-     * @param lastName the last name
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     /**
-     * Gets user name.
+     * Gets author.
      *
-     * @return the user name
+     * @return the author
      */
-    public String getUserName() {
-        return userName;
+    public String getAuthor() {
+        return author;
     }
 
+
     /**
-     * Sets user name.
+     * Sets author.
      *
-     * @param userName the user name
+     * @param author the author
      */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setAuthor(String author) {
+        this.author = author;
     }
+
 
     /**
      * Gets id.
@@ -124,20 +112,43 @@ public class Book {
         this.id = id;
     }
 
+    /**
+     * Gets isbn.
+     *
+     * @return the isbn
+     */
+    public String getIsbn() {
+        return isbn;
+    }
+
 
     /**
-     * Sets date of birth.
+     * Sets isbn.
      *
-     * @param dateOfBirth the date of birth
+     * @param isbn the isbn
      */
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     /**
-     * Gets date of birth.
+     * Gets publication year.
      *
-     * @return the date of birth
+     * @return the publication year
      */
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+    public int getPublicationYear() {
+        return publicationYear;
+    }
+
+    /**
+     * Sets publication year.
+     *
+     * @param publicationYear the publication year
+     */
+    public void setPublicationYear(int publicationYear) {
+        this.publicationYear = publicationYear;
+    }
+
+
+
+}
