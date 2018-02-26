@@ -3,8 +3,12 @@ package edu.matc.persistence;
 import edu.matc.entity.Book;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
@@ -16,49 +20,47 @@ public class BookDao {
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
-    public
-    /**
-     * Get book by id
-     */
-    public Book getById(int id) {
-
-        return null;
-    }
-
-    /**
-     * update book
-     * @param book  Book to be inserted or updated
-     */
-    public void saveOrUpdate(Book book) {
-
-    }
-
-    /**
-     * update Book
-     * @param book  Book to be inserted or updated
-     */
-    public int insert(Book book) {
-        return 0;
-    }
-
-    /**
-     * Delete a book
-     * @param book Book to be deleted
-     */
-    public void delete(Book book) {
-
+    public List<Book> getAllBooks() {
+        Session session = sessionFactory.openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Book> query = builder.createQuery(Book.class);
+        Root<Book> root = query.from(Book.class);
+        List<Book> books = session.createQuery(query).getResultList();
+        logger.debug("The list of books " + books);
+        session.close();
+        return books;
     }
 
 
-    /** Return a list of all books
-     *
-     * @return All books
-     */
-    public List<Book> getAll() {
+        /**
+         * Get book by id
+         */
+        public Book getById ( int id){
 
-        return null;
-    }
+            return null;
+        }
 
+        /**
+         * update book
+         * @param book  Book to be inserted or updated
+         */
+        public void saveOrUpdate (Book books){
 
+        }
 
+        /**
+         * update Book
+         * @param book  Book to be inserted or updated
+         */
+        public int insert (Book books){
+            return 0;
+        }
+
+        /**
+         * Delete a book
+         * @param book Book to be deleted
+         */
+        public void delete (Book books){
+
+        }
 }
