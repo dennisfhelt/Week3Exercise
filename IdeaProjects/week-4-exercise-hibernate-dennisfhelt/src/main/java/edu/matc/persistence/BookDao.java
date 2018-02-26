@@ -16,6 +16,7 @@ public class BookDao {
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
+    public
     /**
      * Get book by id
      */
