@@ -1,5 +1,4 @@
-<!--TODO update this file for your environment -->
-<!--TODO add the mapping class element/s -->
+
 
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
@@ -20,7 +19,7 @@
         <property name="hibernate.c3p0.idle_test_period">3000</property>
 
 
-
+        <mapping class="edu.matc.entity.Book"/>
 
     </session-factory>
 
