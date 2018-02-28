@@ -25,7 +25,8 @@ public class Book {
      * Instantiates a new Book.
      */
     public Book() {
-        }
+
+    }
 
 
     /**
