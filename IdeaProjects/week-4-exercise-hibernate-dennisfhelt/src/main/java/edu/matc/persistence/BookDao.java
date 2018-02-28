@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -26,6 +27,7 @@ public class BookDao {
         CriteriaQuery<Book> query = builder.createQuery(Book.class);
         Root<Book> root = query.from(Book.class);
         List<Book> books = session.createQuery(query).getResultList();
+
         logger.debug("The list of books " + books);
         session.close();
         return books;
@@ -37,14 +39,22 @@ public class BookDao {
          */
         public Book getById ( int id){
 
-            return null;
+            Session session = sessionFactory.openSession();
+            Book books = session.get( Book.class, id );
+            session.close();
+            return books;
         }
 
         /**
          * update book
          * @param books  Book to be inserted or updated
          */
-        public void saveOrUpdate (Book books){
+        public void saveOrUpdate (Book books) {
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.beginTransaction();
+            session.saveOrUpdate(books);
+            transaction.commit();
+            session.close();
 
         }
 
@@ -53,7 +63,15 @@ public class BookDao {
          * @param books  Book to be inserted or updated
          */
         public int insert (Book books){
-            return 0;
+
+            int id = 0;
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.beginTransaction();
+            id = (int)session.save(books);
+            transaction.commit();
+            session.close();
+            return id;
+
         }
 
         /**
@@ -61,6 +79,10 @@ public class BookDao {
          * @param books Book to be deleted
          */
         public void delete (Book books){
-
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.beginTransaction();
+            session.delete(books);
+            transaction.commit();
+            session.close();
         }
 }

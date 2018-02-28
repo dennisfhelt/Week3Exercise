@@ -4,16 +4,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
-
-/**
- * TODO At minimum, complete the following
- * TODO create no-arg constructor
- * TODO create getters and setters
- * TODO add hibernate annotations
- * TODO Javadoc comments
- */
 @Entity(name="Book")
-@Table(name="book")
+@Table(name="books")
 
 
 public class Book {
@@ -33,6 +25,7 @@ public class Book {
      * Instantiates a new Book.
      */
     public Book() {
+
     }
 
 

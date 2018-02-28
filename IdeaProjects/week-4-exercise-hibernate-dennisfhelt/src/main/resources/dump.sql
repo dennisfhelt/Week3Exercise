@@ -19,7 +19,7 @@
 -- Table structure for table `book`
 --
 
-DROP TABLE IF EXISTS `book`;
+DROP TABLE IF EXISTS books;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `book` (
@@ -38,10 +38,10 @@ CREATE TABLE `book` (
 -- Dumping data for table `book`
 --
 
-LOCK TABLES `book` WRITE;
-/*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (1,'Head First Java, 2nd Edition','Kathy Sierra','978-0596009205',2005),(2,'Beginning Hibernate','joseph ottinger','978-1-4842-2319-2',2016),(3,'Java: A Beginner’s Guide (Sixth Edition)','Herbert Schilt','978-0071809252',2014);
-/*!40000 ALTER TABLE `book` ENABLE KEYS */;
+LOCK TABLES books WRITE;
+/*!40000 ALTER TABLE books DISABLE KEYS */;
+INSERT INTO books VALUES (1,'Head First Java, 2nd Edition','Kathy Sierra','978-0596009205',2005),(2,'Beginning Hibernate','joseph ottinger','978-1-4842-2319-2',2016),(3,'Java: A Beginner’s Guide (Sixth Edition)','Herbert Schilt','978-0071809252',2014);
+/*!40000 ALTER TABLE books ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
