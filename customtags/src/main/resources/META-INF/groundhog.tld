@@ -1,0 +1,17 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>Tag Lib Groundhog</short-name>
+    <!-- uri can be whatever you choose, it does not have to point to a real url
+        the uri will be used in the jsps that use the tags lib -->
+    <uri>http://matc.edu/tagsGroundhog</uri>
+    <tag>
+        <!-- name difines the tag that will be used in jssps to call your tag code -->
+        <name>Groundhog</name>
+        <!-- tag-class is the fully qualified class containing the doTag()
+            method that should run when <Hello> is used -->
+        <tag-class>edu.matc.customtags.GroundhogTag</tag-class>
+        <!-- body content is used to pass values to your tag code -->
+        <body-content>empty</body-content>
+    </tag>
+</taglib>
